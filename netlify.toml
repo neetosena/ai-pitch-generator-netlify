@@ -1,3 +1,6 @@
+[build]
+  functions = "netlify/functions"
+  publish = "dist" # or "build" depending on your setup (Vite: "dist", CRA: "build")
+
 [functions]
-  directory = "netlify/functions"
   node_bundler = "esbuild"

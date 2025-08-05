@@ -24,7 +24,7 @@ export const handler = async (event) => {
     const prompt = `Write a short max-length 180, confident elevator pitch for someone named ${name}, a ${role}, who has experience in ${skills}, and whose goal is to ${goal}.`;
 
     const response = await axios.post(
-      HF_TOKEN,
+      HF_URL,
       {
         model: MODEL,
         messages: [{ role: "user", content: prompt }],
