@@ -45,6 +45,8 @@ exports.handler = async (event) => {
     const message =
       response.data?.choices?.[0]?.message?.content || "No response";
 
+    console.log("Deploying Netlify Function 🚀");
+
     return {
       statusCode: 200,
       headers: {
