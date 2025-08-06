@@ -7,15 +7,17 @@
   font-family: "Poppins", system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
-.stretch-elements {
-  @apply w-full h-16;
-}
-
 @theme {
   --font-primary: "Poppins", sans-serif;
   --font-secondary: "Borel", cursive;
 }
 
-.logo {
-  /* @apply text-white bg-white; */
+.stretch-elements {
+  @apply text-base w-full h-16;
+}
+
+@media (max-width: 500px) {
+  .stretch-elements {
+    @apply text-base w-full h-12;
+  }
 }

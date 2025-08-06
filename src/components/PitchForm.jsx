@@ -66,7 +66,7 @@ const PitchForm = () => {
     <>
       <form
         onSubmit={handleSubmit}
-        className="pb-11 max-w-xl w-full px-5 flex flex-col gap-5"
+        className="max-w-xs pb-11 w-full px-5 flex flex-col gap-5 md:max-w-xl "
       >
         <input
           type="text"
