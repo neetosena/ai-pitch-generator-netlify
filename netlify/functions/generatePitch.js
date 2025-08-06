@@ -1,20 +1,19 @@
 import axios from "axios";
 
 exports.handler = async (event) => {
-  
- // Set CORS headers
+  // Set CORS headers
   const headers = {
-    'Access-Control-Allow-Origin': '*', // Or specify your allowed origin
-    'Access-Control-Allow-Headers': 'Content-Type, Accept, Origin',
-    'Access-Control-Allow-Methods': 'POST, OPTIONS',
-    'Access-Control-Max-Age': '86400',
-    'Content-Type': 'application/json'
+    "Access-Control-Allow-Origin": "*", // Or specify your allowed origin
+    "Access-Control-Allow-Headers": "Content-Type, Accept, Origin",
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Max-Age": "86400",
+    "Content-Type": "application/json",
   };
-  
+
   if (event.httpMethod === "OPTIONS") {
     return {
       statusCode: 200,
-     headers,
+      headers,
       body: "CORS preflight",
     };
   }
@@ -23,8 +22,8 @@ exports.handler = async (event) => {
     const body = JSON.parse(event.body);
     const { name, role, skills, goal } = body;
 
-    const HF_TOKEN = process.env.HUGGINGFACE_API_KEY;
-    const MODEL = process.env.HF_MODEL;
+    const HF_TOKEN = process.env.HF_TOKEN;
+    const MODEL = process.env.MODEL;
     const HF_URL = process.env.HF_URL;
 
     const prompt = `Write a short max-length 180, confident elevator pitch for someone named ${name}, a ${role}, who has experience in ${skills}, and whose goal is to ${goal}.`;
@@ -34,7 +33,7 @@ exports.handler = async (event) => {
       {
         model: MODEL,
         messages: [{ role: "user", content: prompt }],
-        steam: false,
+        stream: false,
         parameters: {
           max_new_tokens: 180,
           return_full_text: false,
@@ -61,7 +60,7 @@ exports.handler = async (event) => {
       body: JSON.stringify({ message }),
     };
   } catch (err) {
-    console.error("Error Netlify: ", err.message);
+    console.error("Error Netlify: ", err);
     return {
       statusCode: 500,
       headers: {
