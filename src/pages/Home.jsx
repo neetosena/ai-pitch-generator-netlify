@@ -3,7 +3,7 @@ import ArrowsLogo from "../assets/images/arrows.svg";
 
 const Home = () => {
   return (
-    <div className="flex flex-col justify-center h-dvh bg-blue-950">
+    <div className="flex flex-col justify-center min-h-dvh h-full bg-blue-950">
       <div className="flex flex-col items-center">
         <img
           src={ArrowsLogo}

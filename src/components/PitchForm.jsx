@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import useFetch from "../assets/hooks/useFetch";
 import Loading from "./Loading";
 import { ToastContainer, toast } from "react-toastify";
@@ -104,10 +104,9 @@ const PitchForm = () => {
           {isLoading ? "Generating..." : "Send"}
         </button>
       </form>
-      {/* {!isLoading && <Loading />} */}
+
       <ToastContainer />
       {data && <AiMessage data={data} isDone={isDone} />}
-      {/* <AiMessage data={data} isDone={isDone} /> */}
     </>
   );
 };
