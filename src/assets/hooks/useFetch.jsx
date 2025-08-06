@@ -6,7 +6,7 @@ const useFetch = ({ name, role, skills, goal, isDone, setIsDone }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const FUNCTION_URL =
-    "https://ai-pitch-elevator.netlify.app.netlify.app/.netlify/functions/generatePitch";
+    "https://ai-pitch-elevator.netlify.app/.netlify/functions/generatePitch";
 
   const fetchData = async () => {
     setIsLoading(true);
