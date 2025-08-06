@@ -1,14 +1,20 @@
 import axios from "axios";
 
 exports.handler = async (event) => {
+  
+ // Set CORS headers
+  const headers = {
+    'Access-Control-Allow-Origin': '*', // Or specify your allowed origin
+    'Access-Control-Allow-Headers': 'Content-Type, Accept, Origin',
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Max-Age': '86400',
+    'Content-Type': 'application/json'
+  };
+  
   if (event.httpMethod === "OPTIONS") {
     return {
       statusCode: 200,
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "*",
-        "Access-Control-Allow-Methods": "*",
-      },
+     headers,
       body: "CORS preflight",
     };
   }
