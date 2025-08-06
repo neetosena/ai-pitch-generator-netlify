@@ -27,7 +27,7 @@ exports.handler = async (event) => {
     const MODEL = process.env.MODEL;
     const HF_URL = process.env.HF_URL;
 
-    const prompt = `Write a short max-length 180, confident elevator pitch for someone named ${name}, a ${role}, who has experience in ${skills}, and whose goal is to ${goal}.`;
+    const prompt = `Write a confident elevator pitch for someone named ${name}, a ${role}, with experience in ${skills}, and whose goal is ${goal}. The pitch must be no longer than 180 characters, including spaces and punctuation.`;
 
     const response = await axios.post(
       HF_URL,
