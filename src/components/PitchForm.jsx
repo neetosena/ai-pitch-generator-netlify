@@ -3,6 +3,7 @@ import useFetch from "../assets/hooks/useFetch";
 import Loading from "./Loading";
 import { ToastContainer, toast } from "react-toastify";
 import AiMessage from "./AiMessage";
+import ArrowsLogo from "../assets/images/arrows.svg";
 
 import party from "party-js";
 
@@ -63,51 +64,67 @@ const PitchForm = () => {
   }, [data]);
 
   return (
-    <>
-      <form
-        onSubmit={handleSubmit}
-        className="max-w-xs pb-11 w-full px-5 flex flex-col gap-5 md:max-w-xl "
-      >
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          onChange={handleChange}
-          value={prompt.name}
-          className="input stretch-elements"
-        />
-        <input
-          type="text"
-          name="role"
-          placeholder="Role"
-          onChange={handleChange}
-          value={prompt.role}
-          className="input stretch-elements"
-        />
-        <input
-          type="text"
-          name="skills"
-          placeholder="Skills/Tech"
-          onChange={handleChange}
-          value={prompt.skills}
-          className="input stretch-elements"
-        />
-        <input
-          type="text"
-          name="goal"
-          placeholder="Career Goal"
-          onChange={handleChange}
-          value={prompt.goal}
-          className="input stretch-elements"
-        />
-        <button type="submit" className="btn btn-primary stretch-elements">
-          {isLoading ? "Generating..." : "Send"}
-        </button>
-      </form>
-
+    <div className="w-full">
+      <div className="w-full min-h-dvh h-full flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center  bg-blue-950">
+          <div className="flex flex-col items-center">
+            <img
+              src={ArrowsLogo}
+              alt="Logo"
+              className="logo mb-7 max-w-12 w-full text-white"
+            />
+            <span className="font-secondary text-5xl text-blue-500">
+              ELEVATOR
+            </span>
+            <span className="mb-4 font-secondary text-4xl text-amber-500 lg:mb-15 ">
+              Pitch
+            </span>
+          </div>
+        </div>
+        <form
+          onSubmit={handleSubmit}
+          className="max-w-xs pb-11 w-full px-5 flex flex-col gap-5 md:max-w-xl"
+        >
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            onChange={handleChange}
+            value={prompt.name}
+            className="input stretch-elements"
+          />
+          <input
+            type="text"
+            name="role"
+            placeholder="Role"
+            onChange={handleChange}
+            value={prompt.role}
+            className="input stretch-elements"
+          />
+          <input
+            type="text"
+            name="skills"
+            placeholder="Skills/Tech"
+            onChange={handleChange}
+            value={prompt.skills}
+            className="input stretch-elements"
+          />
+          <input
+            type="text"
+            name="goal"
+            placeholder="Career Goal"
+            onChange={handleChange}
+            value={prompt.goal}
+            className="input stretch-elements"
+          />
+          <button type="submit" className="btn btn-primary stretch-elements">
+            {isLoading ? "Generating..." : "Send"}
+          </button>
+        </form>
+      </div>
       <ToastContainer />
       {data && <AiMessage data={data} isDone={isDone} />}
-    </>
+    </div>
   );
 };
 export default PitchForm;

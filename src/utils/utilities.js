@@ -6,7 +6,7 @@ export const breakDataToParagraph = (data) => {
     .map((sentence) => sentence.trim())
     .filter((sentence) => sentence.length > 0)
     .map((sentence) => {
-      if (/[!?]$/.test(sentence)) {
+      if (/[!?"]$/.test(sentence)) {
         sentence = sentence.slice(0, -1);
       }
       return sentence + ".";
