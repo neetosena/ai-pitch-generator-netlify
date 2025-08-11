@@ -14,7 +14,7 @@ const AiMessage = ({ data }) => {
       id="message"
       className="w-full h-dvh border flex justify-center items-center text-center bg-blue-900 "
     >
-      <div className="max-w-xl px-15 text-base leading-10 text-white lg:text-2xl lg:max-w-2xl ">
+      <div className="max-w-xl px-15 text-base leading-10 text-white lg:text-2xl lg:max-w-2xl">
         {convertDataToArr.length > 1 ? (
           <div>
             {convertDataToArr.map((item, i) => {
@@ -22,7 +22,7 @@ const AiMessage = ({ data }) => {
                 <p
                   key={i}
                   className={`pt-3.5 ${
-                    i === 0 ? "font-semibold text-2xl" : "font-normal"
+                    i === 0 ? "font-semibold text-1xl" : "font-normal"
                   }`}
                 >
                   {item}
