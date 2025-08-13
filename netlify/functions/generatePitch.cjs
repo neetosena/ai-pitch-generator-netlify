@@ -1,7 +1,6 @@
 import axios from "axios";
 
 exports.handler = async (event) => {
-  console.log("Deploying Netlify Function 🚀");
   // Set CORS headers
   const headers = {
     "Access-Control-Allow-Origin": "*", // Or specify your allowed origin

@@ -84,7 +84,6 @@ const PitchForm = () => {
         <form
           onSubmit={handleSubmit}
           className="max-w-xs pb-11 w-full px-5 flex flex-col gap-5 md:max-w-xl"
-          autoComplete="off"
         >
           <input
             type="text"

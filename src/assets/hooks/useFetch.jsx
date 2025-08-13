@@ -27,7 +27,6 @@ const useFetch = ({ name, role, skills, goal, isDone, setIsDone }) => {
           },
         }
       );
-      console.log("Full response:", response.data);
 
       setData(response?.data?.message || "No pitch generated.");
     } catch (err) {

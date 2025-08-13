@@ -4,7 +4,7 @@
 @plugin "daisyui";
 
 :root {
-  font-family: "Poppins", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Poppins", system-ui, "Avenir", Helvetica, Arial, sans-serif;
 }
 
 @theme {
